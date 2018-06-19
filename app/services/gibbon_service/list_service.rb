@@ -17,9 +17,9 @@ module GibbonService
       p "Generating List #{ list_name }"
       response = gibbon.lists.create(body: { name: list_name }.merge(DEFAULT_LIST_GENERATION_PARAMS))
       p response
-      @list_uid = response['id'] if response['id'].present?
+      @list_uid = response.body['id'] if response.body['id'].present?
       p "Generated List #{ list_name } -- #{ @list_uid }"
-      response
+      response.body
     end
 
     def update_list(subscribable_emails = [], unsubscribable_uids = [])
@@ -43,7 +43,7 @@ module GibbonService
           else
             response = gibbon.lists(@list_uid).members.create(params)
           end
-          @members << response if response['id']
+          @members << response.body if response.body['id']
           p response
         end
         p "Finished subscribe on mailchimp for members with emails #{ members_batch.join(', ') }"

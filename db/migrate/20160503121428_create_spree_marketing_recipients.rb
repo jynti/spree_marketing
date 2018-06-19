@@ -1,4 +1,4 @@
-class CreateSpreeMarketingRecipients < ActiveRecord::Migration
+class CreateSpreeMarketingRecipients < ActiveRecord::Migration[4.2]
   def change
     create_table :spree_marketing_recipients do |t|
       t.references :campaign, index: true
