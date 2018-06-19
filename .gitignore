@@ -13,3 +13,5 @@ pkg
 *.swp
 spec/dummy
 .rspec
+gemfiles/*.gemfile.lock
+gemfiles/.bundle/

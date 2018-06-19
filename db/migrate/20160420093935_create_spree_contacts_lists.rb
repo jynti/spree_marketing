@@ -1,4 +1,4 @@
-class CreateSpreeContactsLists < ActiveRecord::Migration
+class CreateSpreeContactsLists < ActiveRecord::Migration[4.2]
   def change
     create_table :spree_marketing_contacts_lists do |t|
       t.references :contact, index: true

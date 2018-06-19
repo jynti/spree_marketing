@@ -1,4 +1,4 @@
-class CreateSpreeLists < ActiveRecord::Migration
+class CreateSpreeLists < ActiveRecord::Migration[4.2]
   def change
     create_table :spree_marketing_lists do |t|
       t.string :uid, null: false

@@ -1,4 +1,4 @@
-class CreateSpreeContacts < ActiveRecord::Migration
+class CreateSpreeContacts < ActiveRecord::Migration[4.2]
   def change
     create_table :spree_marketing_contacts do |t|
       t.string :mailchimp_id

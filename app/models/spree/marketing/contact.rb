@@ -10,7 +10,7 @@ module Spree
       has_many :lists, through: :contacts_lists
       has_many :recipients, class_name: "Spree::Marketing::Recipient", dependent: :restrict_with_error
       has_many :campaigns, through: :recipients
-      belongs_to :user, class_name: Spree.user_class
+      belongs_to :user, class_name: Spree.user_class.name
 
       # Validations
       validates :uid, :email, :mailchimp_id, presence: true
